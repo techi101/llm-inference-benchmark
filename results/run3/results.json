@@ -1,0 +1,27 @@
+{
+ "env": {
+  "python": "3.13.16",
+  "cpu_count": 4,
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu": "Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz",
+  "torch": "2.11.0+cu130",
+  "cuda": true,
+  "stage_seconds": 6.7
+ },
+ "vllm_install": {
+  "error": "RuntimeError: command failed (1): VIRTUAL_ENV=/tmp/vllm_env uv pip install vllm==0.6.6.post1 | STDOUT:  | STDERR: Using Python 3.13.16 environment at: /usr\nerror: No solution found when resolving dependencies\n  cause: Because torchvision==0.20.1 has no wheels with a matching Python ABI tag (e.g., `cp313`) and vllm==0.6.6.post1 depends on torchvision==0.20.1, we can conclude that vllm==0.6.6.post1 cannot be used.\n         And because you require vllm==0.6.6.post1, we can conclude that your requirements are unsatisfiable.\n\nhint: You require CPython 3.13 (`cp313`), but we only found wheels for `torchvision` (v0.20.1) with the following Python ABI tags: `cp39`, `cp310`, `cp311`, `cp312`\n",
+  "trace": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 73, in run\n    RES[name] = fn(*a, **k) or {}\n                ~~^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 537, in vllm_install\n    r = sh(\"VIRTUAL_ENV=/tmp/vllm_env uv pip install vllm==0.6.6.post1\", check=True)\n  File \"/kaggle/src/script.py\", line 60, in sh\n    raise RuntimeError(f\"command failed ({r.returncode}): {cmd} | STDOUT: {r.stdout[-800:]} | STDERR: {r.stderr[-1500:]}\")\nRuntimeError: command failed (1): VIRTUAL_ENV=/tmp/vllm_env uv pip install vllm==0.6.6.post1 | STDOUT:  | STDERR: Using Python 3.13.16 environment at: /usr\nerror: No solution found when resolving dependencies\n  cause: Because torchvision==0.20.1 has no wheels with a matching Python ABI tag (e.g., `cp313`) and vllm==0.6.6.post1 depends on torchvision==0.20.1, we can conclude that vllm==0.6.6.post1 cannot be used.\n         And because you require vllm==0.6.6.post1, we can conclude that your requirements are unsatisfiable.\n\nhint: You require CPython 3.13 (`cp313`), but we only found wheels for `torchvision` (v0.20.1) with the following Python ABI tags: `cp39`, `cp310`, `cp311`, `cp312`\n\n",
+  "stage_seconds": 5.6
+ },
+ "vllm_gpu_FP16": {
+  "error": "RuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n",
+  "trace": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 73, in run\n    RES[name] = fn(*a, **k) or {}\n                ~~^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 551, in vllm_run\n    raise RuntimeError(\"vLLM worker failed: \" + r.stderr[-1500:])\nRuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n\n",
+  "stage_seconds": 0.1
+ },
+ "vllm_gpu_AWQ_INT4": {
+  "error": "RuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n",
+  "trace": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 73, in run\n    RES[name] = fn(*a, **k) or {}\n                ~~^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 551, in vllm_run\n    raise RuntimeError(\"vLLM worker failed: \" + r.stderr[-1500:])\nRuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n\n",
+  "stage_seconds": 0.0
+ },
+ "total_minutes": 1.7
+}

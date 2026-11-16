@@ -1,0 +1,43 @@
+{
+ "env": {
+  "python": "3.13.16",
+  "cpu_count": 4,
+  "gpu": "Tesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04",
+  "cpu": "Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz",
+  "torch": "2.11.0+cu130",
+  "cuda": true,
+  "stage_seconds": 8.7
+ },
+ "ollama": {
+  "backend": "ollama",
+  "model_tag": "qwen2.5:1.5b (Q4_K_M)",
+  "processor": "NAME            ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              \nqwen2.5:1.5b    65ec06548149    2.1 GB    100% GPU     32768      llamacpp    4 minutes from now",
+  "ttft_ms_prompt_eval": 14.7,
+  "latency_p50_s": 0.932,
+  "latency_p95_s": 1.014,
+  "decode_tok_s": 140.5,
+  "eval_seconds": 4.6,
+  "eval": {
+   "correct": 90,
+   "n": 100,
+   "accuracy": 0.9
+  },
+  "cost_per_1M_tokens_single_stream": {
+   "usd": 0.692,
+   "inr": 60.89,
+   "price_assumption_usd_hr": 0.35
+  },
+  "stage_seconds": 170.9
+ },
+ "vllm_gpu_FP16": {
+  "error": "RuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n",
+  "trace": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 73, in run\n    RES[name] = fn(*a, **k) or {}\n                ~~^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 540, in vllm_run\n    raise RuntimeError(\"vLLM worker failed: \" + r.stderr[-1500:])\nRuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n\n",
+  "stage_seconds": 0.1
+ },
+ "vllm_gpu_AWQ_INT4": {
+  "error": "RuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n",
+  "trace": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 73, in run\n    RES[name] = fn(*a, **k) or {}\n                ~~^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 540, in vllm_run\n    raise RuntimeError(\"vLLM worker failed: \" + r.stderr[-1500:])\nRuntimeError: vLLM worker failed: Traceback (most recent call last):\n  File \"/kaggle/working/vllm_worker.py\", line 3, in <module>\n    from vllm import LLM, SamplingParams\nModuleNotFoundError: No module named 'vllm'\n\n",
+  "stage_seconds": 0.0
+ },
+ "total_minutes": 4.7
+}
